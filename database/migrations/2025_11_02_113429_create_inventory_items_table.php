@@ -13,6 +13,15 @@ return new class extends Migration
     {
         Schema::create('inventory_items', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('inventory_id')
+                ->constrained('inventories')
+                ->onDelete('cascade');
+            $table->foreignId('product_id')
+                ->constrained('products')
+                ->onDelete('cascade');
+            $table->decimal('cantidad', 10, 2);
+            $table->decimal('costo_unitario', 10, 2);
+            $table->date('fecha_compra')->nullable();
             $table->timestamps();
         });
     }

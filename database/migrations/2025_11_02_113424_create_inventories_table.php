@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('inventories', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')
+                ->constrained('users')
+                ->onDelete('cascade');
+            $table->timestamp('fecha_inventario')->useCurrent();
+            $table->decimal('total_costo', 10, 2);
             $table->timestamps();
         });
     }
