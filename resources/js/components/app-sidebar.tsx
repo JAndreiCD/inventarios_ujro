@@ -13,7 +13,7 @@ import {
 import { dashboard } from '@/routes';
 import { type NavItem } from '@/types';
 import { Link } from '@inertiajs/react';
-import { BookOpen, Folder, LayoutGrid, Package } from 'lucide-react';
+import { BookOpen, FileText, Folder, LayoutGrid, Package, TrendingDown } from 'lucide-react';
 import AppLogo from './app-logo';
 
 const mainNavItems: NavItem[] = [
@@ -26,6 +26,16 @@ const mainNavItems: NavItem[] = [
         title: 'Productos',
         href: '/products',
         icon: Package,
+    },
+    {
+        title: 'Reporte Inventario',
+        href: '/inventories',
+        icon: FileText,
+    },
+    {
+        title: 'Reporte Afectaciones',
+        href: '/sales',
+        icon: TrendingDown,
     },
 ];
 
